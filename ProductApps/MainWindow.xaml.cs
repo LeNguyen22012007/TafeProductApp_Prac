@@ -37,6 +37,9 @@ namespace ProductApps
 
                 decimal totalCharge = cProduct.TotalPayment + 25.00m;
                 totalChargeTextBox.Text = Convert.ToString(totalCharge);  // Display total charge including delivery charge
+
+                decimal totalChargeAfterWrap = cProduct.TotalPayment + 25.00m + 5.00m;
+                totalChargeAfterWrapTextBox.Text = Convert.ToString(totalChargeAfterWrap);  // Display total charge including delivery and wrapping charges
             }
             catch (FormatException)
             {
@@ -51,6 +54,7 @@ namespace ProductApps
             quantityTextBox.Text = "";
             totalPaymentTextBlock.Text = "";
             totalChargeTextBox.Text = "";  // Clear the total charge text box
+            totalChargeAfterWrapTextBox.Text = "";  // Clear the total charge after wrapping text box   
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
