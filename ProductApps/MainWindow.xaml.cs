@@ -40,6 +40,10 @@ namespace ProductApps
 
                 decimal totalChargeAfterWrap = cProduct.TotalPayment + 25.00m + 5.00m;
                 totalChargeAfterWrapTextBox.Text = Convert.ToString(totalChargeAfterWrap);  // Display total charge including delivery and wrapping charges
+
+                decimal totalChargeAfterGST = totalChargeAfterWrap * 1.1m;
+                totalChargeAfterGSTTextBox.Text = Convert.ToString(totalChargeAfterGST); // Display total charge including delivery, wrapping, and GST
+
             }
             catch (FormatException)
             {
@@ -55,6 +59,7 @@ namespace ProductApps
             totalPaymentTextBlock.Text = "";
             totalChargeTextBox.Text = "";  // Clear the total charge text box
             totalChargeAfterWrapTextBox.Text = "";  // Clear the total charge after wrapping text box   
+            totalChargeAfterGSTTextBox.Text = "";  // Clear the total charge after GST text box
         }
 
         private void closeButton_Click(object sender, RoutedEventArgs e)
